@@ -1,11 +1,9 @@
 import { letters } from './letters';
+import { WelcomeScreen } from './components/WelcomeScreen/WelcomeScreen';
 
 function App() {
   return (
-    <div>
-      <h1>My Love Letters</h1>
-      <p>There are {letters.length} letters in total.</p>
-    </div>
+    <WelcomeScreen />
   );
 }
 
