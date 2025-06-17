@@ -26,18 +26,20 @@
 }
 
 .nav, 
-.cardContainer, 
-.buttonContainer {
+.cardContainer {
     position: relative;
     z-index: 1;
 }
 
 .nav {
     width: 100%;
-    max-width: 1100px;
+    max-width: 900px;
     display: flex;
+    position: absolute;
+    top: 2rem;
     justify-content: space-between;
     padding-bottom: 2rem;
+    gap: 10rem;
 }
 
 .nav a {
@@ -68,13 +70,11 @@
 }
 
 .cardContainer {
-    flex-grow: 1;
     display: flex;
+    position: relative;
     align-items: center;
     justify-content: center;
-    margin-bottom: 2rem;
     width: 100%;
-    transform: translateY(-7vh);
 }
 
 .letterCard {
@@ -100,17 +100,22 @@
 }
 
 .buttonContainer {
-    padding-top: 0rem;
-    height: 100px;
+    width: 100%;
+    height: 270px;
+    bottom: -3px;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
+    position: absolute;
     justify-content: center;
     align-items: center;
-    gap: 15rem;
+    gap: 10rem;
+    z-index: 2;
 }
 
-.nextButton {
+.nextButton, .backButton {
     display: inline-block;
-    padding: 0.5rem 1.7rem;
+    padding: 0.5rem 1rem;
     font-size: 1.2rem;
     font-weight: bold;
     background-color: #a74069;
@@ -128,32 +133,7 @@
     transition: all 0.3s ease;
 }
 
-.nextButton:hover{
-    background-color: #c15b85;
-    transform: translateY(-3px);
-    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.25)
-}
-
-.backButton {
-    padding: 0.5rem 1.7rem;
-    font-size: 1.2rem;
-    font-weight: bold;
-    background-color: #a74069;
-    color: white;
-
-    border: none;
-    border-radius: 30px;
-    text-decoration: none;
-
-    cursor: pointer;
-    position: relative;
-    z-index: 2;
-
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
-}
-
-.backButton:hover{
+.nextButton:hover, .backButton:hover {
     background-color: #c15b85;
     transform: translateY(-3px);
     box-shadow: 0 7px 20px rgba(0, 0, 0, 0.25)
