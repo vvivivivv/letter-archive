@@ -50,13 +50,24 @@ export const useLetterState = () => {
         }
     };
 
+    // func to return to prev letter
+    const revealPreviousLetter = () => {
+        if (readCount > 0){
+            const newReadCount = readCount - 1;
+            setReadCount(newReadCount);
+            localStorage.setItem('readCount', newReadCount.toString())
+        }
+    };
+
     // determine current letter based on shuffled order and read count
     const currentLetterIndex = isInitialised ? shuffledOrder[readCount] : -1;
     const currentLetter: Letter | null = currentLetterIndex > -1 ? allLetters[currentLetterIndex] : null;
 
     const areAllLettersRead = readCount >= allLetters.length;
+    const canGoBack = readCount > 0;
 
     return {
-        isInitialised, currentLetter, revealNextLetter, areAllLettersRead, readCount, totalLetters: allLetters.length,
+        isInitialised, currentLetter, revealNextLetter, revealPreviousLetter,
+        areAllLettersRead, canGoBack, readCount, totalLetters: allLetters.length,
     };
 };
