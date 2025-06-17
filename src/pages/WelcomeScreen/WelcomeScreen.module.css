@@ -1,0 +1,100 @@
+
+.welcomeContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    padding-top: 15vh;
+    padding-bottom: 15vh;
+    box-sizing: border-box;
+    background-image: url('/images/wallpaper.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.heartsContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.heart {
+    position: absolute;
+    bottom: -50px;
+    font-size: 1.5rem;
+
+    animation-name: float-up;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes float-up {
+    from {
+        transform: translateY(0) translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-110vh) translateX(50px);
+        opacity: 0;
+    }
+}
+
+.heart:nth-child(1) {left: 10%; animation-duration: 12s; animation-delay: 0s;}
+.heart:nth-child(2) {left: 20%; animation-duration: 15s; animation-delay: 2s; font-size: 1rem;}
+.heart:nth-child(3) {left: 30%; animation-duration: 10s; animation-delay: 4s;}
+.heart:nth-child(4) {left: 40%; animation-duration: 18s; animation-delay: 1s; font-size: 1.8rem;}
+.heart:nth-child(5) {left: 50%; animation-duration: 13s; animation-delay: 5s;}
+.heart:nth-child(6) {left: 60%; animation-duration: 11s; animation-delay: 7s; font-size: 1.2rem;}
+.heart:nth-child(7) {left: 70%; animation-duration: 16s; animation-delay: 3s;}
+.heart:nth-child(8) {left: 80%; animation-duration: 9s; animation-delay: 6s; font-size: 2rem;}
+.heart:nth-child(9) {left: 90%; animation-duration: 14s; animation-delay: 8s;}
+.heart:nth-child(10){left: 15%; animation-duration: 17s; animation-delay: 9s; font-size: 1.5rem;}
+
+
+.welcomeTitle {
+    font-size: 3rem;
+    color: white;
+    position: relative;
+    z-index: 2;
+}
+
+.beginButton {
+    display: inline-block;
+    padding: 0.5rem 1.7rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: #a74069;
+    color: white;
+
+    border: none;
+    border-radius: 30px;
+    text-decoration: none;
+
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.beginButton:hover {
+    background-color: #c15b85;
+    transform: translateY(-3px);
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.25)
+}
+
+.beginButton:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
