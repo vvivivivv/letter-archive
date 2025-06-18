@@ -21,52 +21,18 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.15);
     z-index: 0;
 }
-
-.nav, 
+ 
 .cardContainer {
     position: relative;
     z-index: 1;
 }
 
-.nav {
-    width: 100%;
-    max-width: 900px;
-    display: flex;
-    position: absolute;
-    top: 2rem;
-    justify-content: space-between;
-    padding-bottom: 2rem;
-    gap: 10rem;
-}
-
 .nav a {
     color: #a74069;
     text-decoration: none;
-}
-
-.navButton {
-    background-color: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(5px);
-    color: #a74069;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 800;
-    border: 1px solid rgba(167, 64, 105, 0.2);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    transition: all 0.2s ease-in-out;
-}
-
-.navButton:hover{
-    background-color: white;
-    color: #c15b85;
-    border-color: rgba(167, 64, 105, 0.4);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1)
 }
 
 .cardContainer {
@@ -109,8 +75,22 @@
     position: absolute;
     justify-content: center;
     align-items: center;
-    gap: 10rem;
     z-index: 2;
+    max-width: 550px; 
+    padding: 0 1rem;
+}
+
+.buttonSlot {
+    flex-basis: 200px;
+    display: flex;
+    justify-content: center;
+}
+
+.buttonSlot:first-child {
+    justify-content: flex-start;
+}
+.buttonSlot:last-child {
+    justify-content: flex-end;
 }
 
 .nextButton, .backButton {

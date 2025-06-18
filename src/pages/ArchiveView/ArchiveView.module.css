@@ -1,0 +1,58 @@
+
+.archiveContainer {
+    padding: 2rem 4rem;
+    background-color: #fdf2f8;
+    background-image: url('/images/wallpaper.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    min-height: 100vh;
+    padding: 7rem 4rem 2rem 4rem;
+}
+
+.archiveContainer::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.15);
+    z-index: 0;
+}
+
+.title {
+    font-size: 2.5rem;
+    color: #a74069;
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 1;
+}
+
+.emptyMessage {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #a74069;
+    margin-top: 5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.archiveCard {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    color: #333;
+    font-size: 1rem;
+    line-height: 1.5;
+}
