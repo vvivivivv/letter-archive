@@ -19,7 +19,7 @@ body,
   width: 100%;
   margin: 0;
   padding: 0;
-  overflow: hidden; 
+  overflow: auto; 
 }
 
 /* 3. A helper rule to make sizing elements easier */
@@ -27,4 +27,44 @@ body,
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+.appNav {
+  position: absolute;
+  top: 2rem;
+  left: 0;
+  right: 0;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  
+  padding: 0 2rem; 
+  box-sizing: border-box;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+
+.navButton {
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(5px);
+  color: #a74069;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 800;
+  border: 1px solid rgba(167, 64, 105, 0.2);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease-in-out;
+}
+
+.navButton:hover {
+  background-color: white;
+  color: #c15b85;
+  border-color: rgba(167, 64, 105, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }

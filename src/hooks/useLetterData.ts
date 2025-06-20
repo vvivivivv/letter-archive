@@ -63,11 +63,14 @@ export const useLetterState = () => {
     const currentLetterIndex = isInitialised ? shuffledOrder[readCount] : -1;
     const currentLetter: Letter | null = currentLetterIndex > -1 ? allLetters[currentLetterIndex] : null;
 
+    // expose read letters
+    const readLetters = isInitialised ? shuffledOrder.slice(0, readCount).map(index => allLetters[index]) : [];
+
     const areAllLettersRead = readCount >= allLetters.length;
     const canGoBack = readCount > 0;
 
     return {
-        isInitialised, currentLetter, revealNextLetter, revealPreviousLetter,
+        isInitialised, currentLetter, readLetters, revealNextLetter, revealPreviousLetter,
         areAllLettersRead, canGoBack, readCount, totalLetters: allLetters.length,
     };
 };
