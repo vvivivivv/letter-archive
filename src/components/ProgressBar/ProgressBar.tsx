@@ -9,6 +9,8 @@ import charStage1 from '/images/ProgressBarImages/charStage1.png'
 
 interface ProgressBarProps {
     progress: number;
+    readCount: number;
+    totalLetters: number;
 }
 
 const getProgressState = (progress: number) => {
@@ -33,7 +35,7 @@ const getProgressState = (progress: number) => {
     }
 }
 
-export function ProgressBar({progress}: ProgressBarProps){
+export function ProgressBar({progress, readCount, totalLetters}: ProgressBarProps){
     const {image, message} = getProgressState(progress);
     const cappedProgress = Math.min(progress, 100);
 
@@ -53,6 +55,10 @@ export function ProgressBar({progress}: ProgressBarProps){
           className={styles.character}
           style={{left: `${cappedProgress}%`}}
         />
+
+        <div className={styles.counter}>
+            {readCount}/{totalLetters}
+        </div>
 
       </div>
     </div>

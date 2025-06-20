@@ -40,5 +40,27 @@
     height: 75px;
     width: auto;
     filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.15));
-    transition: width 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    transition: left 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.counter {
+    position: absolute;
+    right: -40px;
+    padding: 4px 10px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border: 2px solid #e9d5e0;
+    border-radius: 14px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    color: #c15b15;
+    font-size: 0.8rem;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.fill[style*="width: 100%"] + .character + .counter {
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
