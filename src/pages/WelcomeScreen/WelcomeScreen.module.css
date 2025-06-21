@@ -98,3 +98,37 @@
     transform: translateY(0);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
+
+@media (max-width: 768px){
+    .welcomeContainer {
+        padding-top: 25vh;
+        padding-bottom: 20vh;
+    }
+
+    .welcomeTitle {
+        font-size: 2.2rem;
+        text-align: center;
+        padding: 0 1rem;
+    }
+
+    .beginButton {
+        font-size: 1.1rem;
+        padding: 0.6rem 1.5rem;
+    }
+
+    @keyframes float-up-mobile {
+        from {
+            transform: translateY(0) translateX(0);
+            opacity: 1;
+        }
+        to {
+            transform: translateY(-110vh) translateX(20px);
+            opacity: 0;
+        }
+    }
+    
+    .heart {
+        animation-name: float-up-mobile;
+        font-size: 1.2rem;
+    }
+}

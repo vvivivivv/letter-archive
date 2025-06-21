@@ -30,3 +30,18 @@
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
     color: #a74069;
 }
+
+@media (max-width: 768px){
+    .playerContainer {
+        width: 48px;
+        height: 48px;
+        top: auto;
+        bottom: 1.5rem;
+        right: 1.5rem;
+    } 
+
+    .controlButton svg {
+        width: 20px;
+        height: 20px;
+    }
+}
