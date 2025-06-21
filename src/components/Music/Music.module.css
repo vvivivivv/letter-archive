@@ -1,0 +1,32 @@
+
+.playerContainer {
+    position: fixed;
+    top: 1.5rem;
+    right: 5rem;
+    z-index: 1000;
+}
+
+.controlButton {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(5px);
+    color: #a74069;
+    border: 1px solid rgba(167, 64, 105, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.controlButton:hover{
+    transform: scale(1.1) rotate(5deg);
+    background-color: white;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    color: #a74069;
+}
