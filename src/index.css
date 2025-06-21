@@ -68,3 +68,15 @@ body,
   transform: translateY(-2px);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
+
+@media (max-width: 768px){
+  .appNav {
+    padding: 0 1rem;
+    top: 4rem;
+  }
+
+  .navButton{
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+  }
+}

@@ -24,15 +24,13 @@
     background-color: rgba(255, 255, 255, 0.15);
     z-index: 0;
 }
- 
-.cardContainer {
-    position: relative;
-    z-index: 1;
-}
 
-.nav a {
-    color: #a74069;
-    text-decoration: none;
+.mainContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
 }
 
 .cardContainer {
@@ -50,7 +48,7 @@
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 550px;
-    min-height: 330px;
+    height: 330px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -67,13 +65,12 @@
 
 .buttonContainer {
     width: 100%;
-    height: 270px;
-    bottom: -40px;
+    bottom: 3rem;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     position: absolute;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     z-index: 2;
     max-width: 550px; 
@@ -94,12 +91,15 @@
 }
 
 .nextButton, .backButton {
-    display: inline-block;
+    display: inline-flex;
     padding: 0.5rem 1rem;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: bold;
     background-color: #a74069;
     color: white;
+
+    min-height: 30px;
+    min-width: 60px;
 
     border: none;
     border-radius: 30px;
@@ -126,4 +126,28 @@
     height: 100vh;
     font-size: 1.5rem;
     color: #a74069;
+}
+
+@media (max-width: 768px){
+    .pageContainer {
+        padding: 1rem;
+    }
+
+    .letterCard {
+        font-size: 1.2rem;
+        height: 300px;
+        padding: 1.5rem;
+    }
+
+    .buttonContainer {
+        bottom: 10rem;
+    }
+
+    .buttonSlot {
+        flex-basis: 150px;
+    }
+
+    .mainContent {
+        gap: 1rem;
+    }
 }
