@@ -16,12 +16,12 @@ const shuffleArray = (array: number[]): number[] => {
 export const useLetterState = () => {
     const [shuffledOrder, setShuffledOrder] = useState<number[]>([]);
     const [readCount, setReadCount] = useState<number>(0);
+    const [maxReadCount, setMaxReadCount] = useState<number>(0); 
     const [isInitialised, setIsInitialised] = useState<boolean>(false);
 
     useEffect(() => {
         // load shuffled order
         const savedOrder = localStorage.getItem('letterOrder');
-        
         if (savedOrder){
             setShuffledOrder(JSON.parse(savedOrder));
         }
@@ -35,7 +35,15 @@ export const useLetterState = () => {
 
         // load num of read letters
         const savedReadCount = localStorage.getItem('readCount');
-        setReadCount(savedReadCount ? parseInt(savedReadCount, 10) : 0);
+
+        // max read count for permanent archive
+        const savedMaxReadCount = localStorage.getItem('maxReadCount');
+
+        const currentReadCount = savedReadCount ? parseInt(savedReadCount, 10) : 0;
+        setReadCount(currentReadCount);
+
+        const currentMaxReadCount = savedMaxReadCount ? parseInt(savedMaxReadCount, 10) : 0;
+        setMaxReadCount(Math.max(currentReadCount, currentMaxReadCount));
 
         setIsInitialised(true);
     }, []);
@@ -47,6 +55,11 @@ export const useLetterState = () => {
             const newReadCount = readCount + 1;
             setReadCount(newReadCount);
             localStorage.setItem('readCount', newReadCount.toString());
+
+            if (newReadCount > maxReadCount) {
+                setMaxReadCount(newReadCount);
+                localStorage.setItem('maxReadCount', newReadCount.toString());
+            }
         }
     };
 
@@ -64,8 +77,7 @@ export const useLetterState = () => {
     const currentLetter: Letter | null = currentLetterIndex > -1 ? allLetters[currentLetterIndex] : null;
 
     // expose read letters
-    const readLetters = isInitialised ? shuffledOrder.slice(0, readCount).map(index => allLetters[index]) : [];
-
+    const readLetters = isInitialised ? shuffledOrder.slice(0, maxReadCount).map(index => allLetters[index]) : [];
     const areAllLettersRead = readCount >= allLetters.length;
     const canGoBack = readCount > 0;
 
