@@ -155,13 +155,13 @@
     }
 
     .letterCard {
-        font-size: 1.2rem;
+        font-size: 0.8rem;
         height: 300px;
         padding: 1.5rem;
     }
 
     .buttonContainer {
-        bottom: 10rem;
+        bottom: 2rem;
     }
 
     .buttonSlot {
