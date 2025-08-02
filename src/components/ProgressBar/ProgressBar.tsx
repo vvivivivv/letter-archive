@@ -14,20 +14,20 @@ interface ProgressBarProps {
 }
 
 const getProgressState = (progress: number) => {
-    if (progress >= 100){
-        return {image: charStage6, message: "i love you more than 100 reasons"}
-    }
-    else if (progress >= 80){
-        return {image: charStage5, message: "almost there..."}
-    }
-    else if (progress >= 60){
-        return {image: charStage4, message: "zoom zoom"}
+    if (progress >= 50){
+        return {image: charStage6, message: "愛してる"}
     }
     else if (progress >= 40){
+        return {image: charStage5, message: "almost there..."}
+    }
+    else if (progress >= 30){
+        return {image: charStage4, message: "zoom zoom"}
+    }
+    else if (progress >= 20){
         return {image: charStage3, message: ""}
 
     }
-    else if (progress >= 20){
+    else if (progress >= 10){
         return {image: charStage2, message: "waddle waddle"}
     }
     else {
@@ -37,7 +37,7 @@ const getProgressState = (progress: number) => {
 
 export function ProgressBar({progress, readCount, totalLetters}: ProgressBarProps){
     const {image, message} = getProgressState(progress);
-    const cappedProgress = Math.min(progress, 100);
+    const visualPercentage = totalLetters > 0 ? (readCount/totalLetters) * 100 : 0;
 
     return (
     <div className={styles.progressBarContainer}>
@@ -46,14 +46,14 @@ export function ProgressBar({progress, readCount, totalLetters}: ProgressBarProp
 
         <div 
             className={styles.fill} 
-            style={{width: `${cappedProgress}%`}} 
+            style={{width: `${visualPercentage}%`}} 
         />
 
         <img
           src={image}
           alt="Progress character"
           className={styles.character}
-          style={{left: `${cappedProgress}%`}}
+          style={{left: `${visualPercentage}%`}}
         />
 
         <div className={styles.counter}>

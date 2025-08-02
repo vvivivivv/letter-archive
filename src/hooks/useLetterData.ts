@@ -45,7 +45,6 @@ export const useLetterState = () => {
             localStorage.setItem('maxReadCount', '0');
         }
     
-
         // load num of read letters
         const savedReadCount = localStorage.getItem('readCount');
 

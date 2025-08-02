@@ -1,5 +1,4 @@
 
-/* 1. Set sensible defaults for the whole page */
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -11,7 +10,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* 2. Make the app truly full-screen and removes the white border */
 html,
 body,
 #root {
@@ -22,7 +20,6 @@ body,
   overflow: auto; 
 }
 
-/* 3. A helper rule to make sizing elements easier */
 *,
 *::before,
 *::after {
