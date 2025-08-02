@@ -21,18 +21,30 @@ export const useLetterState = () => {
 
     useEffect(() => {
         // load shuffled order
-        const savedOrder = localStorage.getItem('letterOrder');
-        if (savedOrder){
-            setShuffledOrder(JSON.parse(savedOrder));
+        const savedOrderJSON = localStorage.getItem('letterOrder');
+        let savedOrder = [];
+        if (savedOrderJSON){
+            try {
+                savedOrder = JSON.parse(savedOrderJSON);
+            } catch (e) {
+                savedOrder = [];
+            }
         }
+        
+        if (savedOrder && savedOrder.length === allLetters.length) {
+            setShuffledOrder(savedOrder);
+        } 
         else {
-            // create and save new order
+        // create and save new order
             const initialOrder = allLetters.map((_, index) => index);
             const newShuffledOrder = shuffleArray(initialOrder);
             localStorage.setItem('letterOrder', JSON.stringify(newShuffledOrder));
             setShuffledOrder(newShuffledOrder);
-        }
 
+            localStorage.setItem('readCount', '0');
+            localStorage.setItem('maxReadCount', '0');
+        }
+    
         // load num of read letters
         const savedReadCount = localStorage.getItem('readCount');
 
