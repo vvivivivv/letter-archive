@@ -14,24 +14,24 @@ interface ProgressBarProps {
 }
 
 const getProgressState = (progress: number) => {
-    if (progress >= 50){
-        return {image: charStage6, message: "愛してる"}
+    if (progress >= 5){
+        return {image: charStage6, message: "the end"}
     }
-    else if (progress >= 40){
+    else if (progress >= 4){
         return {image: charStage5, message: "almost there..."}
     }
-    else if (progress >= 30){
-        return {image: charStage4, message: "zoom zoom"}
+    else if (progress >= 3){
+        return {image: charStage4, message: ""}
     }
-    else if (progress >= 20){
-        return {image: charStage3, message: ""}
+    else if (progress >= 2){
+        return {image: charStage3, message: "nearing the midpoint..."}
 
     }
-    else if (progress >= 10){
-        return {image: charStage2, message: "waddle waddle"}
+    else if (progress >= 1){
+        return {image: charStage2, message: "let's go"}
     }
     else {
-        return { image: charStage1, message: "first of many" };
+        return { image: charStage1, message: "the beginning" };
     }
 }
 
