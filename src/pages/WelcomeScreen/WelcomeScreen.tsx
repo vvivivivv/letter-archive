@@ -7,7 +7,7 @@ export function WelcomeScreen(){
 
             <div className={styles.heartsContainer}>
                 {Array.from({length: 10}).map((_, index) => (
-                    <div key={index} className={styles.heart}>❤️</div>
+                    <div key={index} className={styles.heart}>✨</div>
                     ))}
             </div>
 
