@@ -8,7 +8,7 @@ import { Music } from './components/Music/Music';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/letter-archive">
       <div>
         <Routes>
           <Route path="/" element={<WelcomeScreen />} />

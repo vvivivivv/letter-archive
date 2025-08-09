@@ -24,8 +24,12 @@ export function Music() {
             'loop' makes the music repeat automatically
             */}
 
-            <audio ref={audioRef} src='/garage_band.m4a' loop /> 
-            
+            <audio
+                ref={audioRef}
+                src="./garage_band.m4a"
+                loop
+            />
+
             <button
                 onClick={togglePlayPause}
                 className={styles.controlButton}
