@@ -4,6 +4,8 @@ This is my **letter archive website**, built using **ReactJS** and **TypeScript*
 
 It simulates a progression-based reading experience: each pre-loaded letter is revealed in a randomised order and stored in an archive for later viewing. The site features smooth animations, a playful progress tracker, and simple navigation.
 
+Originally designed as a personalised gift, it has since been refactored into a clean, reusable template suitable for interactive storytelling or sequential content delivery.
+
 ---
 
 ## 🚀 Key Features
